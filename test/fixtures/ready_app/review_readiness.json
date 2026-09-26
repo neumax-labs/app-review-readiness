@@ -1,0 +1,21 @@
+{
+  "inAppPurchase": true,
+  "contrast": [
+    {
+      "label": "Sign in with Apple button on the login background",
+      "foreground": "#FFFFFF",
+      "background": { "file": "src/theme.ts", "pattern": "loginBackground:\\s*'#([0-9A-Fa-f]{6})'" },
+      "min": 3.0
+    }
+  ],
+  "rules": [
+    {
+      "id": "paywall is linked from settings",
+      "guideline": "3.1.1",
+      "file": "src/pages/Settings.tsx",
+      "mustContain": ["navigate('/paywall')"],
+      "why": "A free plan must be able to reach a purchase from settings."
+    }
+  ],
+  "manualChecks": ["restore purchases works after reinstalling the app"]
+}

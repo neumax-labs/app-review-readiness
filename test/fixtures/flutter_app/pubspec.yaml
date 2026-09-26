@@ -1,0 +1,8 @@
+name: notes_app
+environment:
+  sdk: ^3.5.0
+dependencies:
+  flutter:
+    sdk: flutter
+flutter:
+  generate: true

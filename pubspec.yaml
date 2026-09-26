@@ -1,0 +1,17 @@
+name: app_review_readiness
+description: >-
+  Pre-submission checks for iOS App Review, written from the reviewer's seat:
+  placeholder content, off-platform purchase steering, missing Sign in with
+  Apple, hidden account deletion, missing permission strings, and more.
+version: 0.1.0
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+executables:
+  app_review_readiness:
+
+dev_dependencies:
+  lints: ^6.0.0
+  test: ^1.26.0

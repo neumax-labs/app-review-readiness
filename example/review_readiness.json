@@ -1,0 +1,45 @@
+{
+  "sellsDigitalGoods": true,
+  "inAppPurchase": true,
+
+  "exclude": ["marketing-site", "admin"],
+  "exemptFiles": ["src/pages/WebOnlyPricing.tsx"],
+  "exemptKeys": ["paywall_androidComingSoon", "onboarding_legacy_*"],
+  "skip": [],
+
+  "platformGuardPatterns": ["isIosBuild"],
+  "roleGuardPatterns": ["RoleGuard", "isAdmin", "hasRole("],
+
+  "contrast": [
+    {
+      "label": "Sign in with Apple button on the login background",
+      "foreground": "#FFFFFF",
+      "background": {
+        "file": "src/theme.ts",
+        "pattern": "loginBackground:\\s*'#([0-9A-Fa-f]{6})'"
+      },
+      "min": 3.0
+    }
+  ],
+
+  "rules": [
+    {
+      "id": "settings links to the paywall",
+      "guideline": "3.1.1",
+      "file": "src/pages/Settings.tsx",
+      "mustContain": ["navigate('/paywall')"],
+      "why": "A reviewer on a free plan must be able to reach a purchase."
+    },
+    {
+      "id": "social proof stays hidden until it is real",
+      "guideline": "2.1",
+      "file": "src/pages/paywall/SocialProof.tsx",
+      "mustMatch": "SHOW_TESTIMONIALS\\s*=\\s*false",
+      "why": "Turning this on republishes placeholder testimonials.\nConfirm they are real, attributable quotes before flipping it."
+    }
+  ],
+
+  "manualChecks": [
+    "restore purchases works after deleting and reinstalling the app"
+  ]
+}
