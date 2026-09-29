@@ -23,6 +23,11 @@ It is a static, heuristic scan. A pass does not guarantee approval, and a
 failure can be a false positive — see [Silencing a finding](#silencing-a-finding).
 Nothing is uploaded anywhere; the tool only reads files on your disk.
 
+## Related free tools
+
+- [App Store Rejection Decoder](https://neumax-labs.github.io/decoder.html): paste Apple's rejection message and get a plain-English explanation, fix steps and a reply draft. Runs in your browser.
+- [Ship-to-App-Store checklist](https://neumax-labs.github.io/checklist.html): a stage-by-stage checklist for apps built with Lovable, Bolt, v0 or Replit.
+
 ## Quick start
 
 Requires the [Dart SDK](https://dart.dev/get-dart) 3.5 or newer (Flutter
